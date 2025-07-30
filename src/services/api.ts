@@ -1,7 +1,10 @@
 import { Person, AuthRequest, AuthResponse, RegisterRequest } from '../types/person';
+import { config, getApiUrl, validateConfig } from '../config';
 
-// Configure this URL to match your backend API
-const API_BASE_URL = 'https://localhost:7056/api';
+// Validate configuration on import
+if (!validateConfig()) {
+  throw new Error('Configuração da API inválida');
+}
 
 class ApiService {
   private token: string | null = null;
@@ -24,7 +27,7 @@ class ApiService {
     endpoint: string,
     options: RequestInit = {}
   ): Promise<T> {
-    const url = `${API_BASE_URL}${endpoint}`;
+    const url = getApiUrl(endpoint);
     
     const config: RequestInit = {
       headers: {
@@ -57,14 +60,14 @@ class ApiService {
 
   // Auth endpoints
   async login(credentials: AuthRequest): Promise<AuthResponse> {
-    return this.request<AuthResponse>('/v1/auth/login', {
+    return this.request<AuthResponse>(config.ENDPOINTS.AUTH.LOGIN, {
       method: 'POST',
       body: JSON.stringify(credentials),
     });
   }
 
   async register(userData: RegisterRequest): Promise<any> {
-    return this.request('/v1/auth/register', {
+    return this.request(config.ENDPOINTS.AUTH.REGISTER, {
       method: 'POST',
       body: JSON.stringify(userData),
     });
@@ -72,58 +75,58 @@ class ApiService {
 
   // Person endpoints V1 (no auth required)
   async getPersonsV1(): Promise<Person[]> {
-    return this.request<Person[]>('/v1/person');
+    return this.request<Person[]>(config.ENDPOINTS.PERSONS.V1_BASE);
   }
 
   async getPersonV1(id: number): Promise<Person> {
-    return this.request<Person>(`/v1/person/${id}`);
+    return this.request<Person>(`${config.ENDPOINTS.PERSONS.V1_BASE}/${id}`);
   }
 
   async createPersonV1(person: Person): Promise<Person> {
-    return this.request<Person>('/v1/person', {
+    return this.request<Person>(config.ENDPOINTS.PERSONS.V1_BASE, {
       method: 'POST',
       body: JSON.stringify(person),
     });
   }
 
   async updatePersonV1(id: number, person: Person): Promise<Person> {
-    return this.request<Person>(`/v1/person/${id}`, {
+    return this.request<Person>(`${config.ENDPOINTS.PERSONS.V1_BASE}/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ ...person, id }),
     });
   }
 
   async deletePersonV1(id: number): Promise<void> {
-    return this.request<void>(`/v1/person/${id}`, {
+    return this.request<void>(`${config.ENDPOINTS.PERSONS.V1_BASE}/${id}`, {
       method: 'DELETE',
     });
   }
 
   // Person endpoints V2 (auth required)
   async getPersonsV2(): Promise<Person[]> {
-    return this.request<Person[]>('/v2/person');
+    return this.request<Person[]>(config.ENDPOINTS.PERSONS.V2_BASE);
   }
 
   async getPersonV2(id: number): Promise<Person> {
-    return this.request<Person>(`/v2/person/${id}`);
+    return this.request<Person>(`${config.ENDPOINTS.PERSONS.V2_BASE}/${id}`);
   }
 
   async createPersonV2(person: Person): Promise<Person> {
-    return this.request<Person>('/v2/person', {
+    return this.request<Person>(config.ENDPOINTS.PERSONS.V2_BASE, {
       method: 'POST',
       body: JSON.stringify(person),
     });
   }
 
   async updatePersonV2(id: number, person: Person): Promise<Person> {
-    return this.request<Person>(`/v2/person/${id}`, {
+    return this.request<Person>(`${config.ENDPOINTS.PERSONS.V2_BASE}/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ ...person, id }),
     });
   }
 
   async deletePersonV2(id: number): Promise<void> {
-    return this.request<void>(`/v2/person/${id}`, {
+    return this.request<void>(`${config.ENDPOINTS.PERSONS.V2_BASE}/${id}`, {
       method: 'DELETE',
     });
   }
