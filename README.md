@@ -1,73 +1,230 @@
-# Welcome to your Lovable project
+# 🚀 PersonCraft - Sistema Avançado de Gestão de Pessoas
 
-## Project info
+<div align="center">
 
-**URL**: https://lovable.dev/projects/085cc7da-01fc-4908-96d1-d053de7ecb06
+![PersonCraft Logo](public/favicon-colored.svg)
 
-## How can I edit this code?
+**A solução definitiva para gestão moderna de cadastros pessoais**
 
-There are several ways of editing your application.
+[![Deploy Status](https://img.shields.io/badge/Deploy-Live-brightgreen)](https://personmanager-f47d5.web.app)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-18.3.1-61dafb)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.4.1-646cff)](https://vitejs.dev/)
+[![Firebase](https://img.shields.io/badge/Firebase-Hosting-orange)](https://firebase.google.com/)
 
-**Use Lovable**
+[🌐 **Aplicação Live**](https://personmanager-f47d5.web.app) | [📖 **Documentação**](./docs/API_CONFIG.md) | [🚀 **Quick Start**](#-quick-start)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/085cc7da-01fc-4908-96d1-d053de7ecb06) and start prompting.
+</div>
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🎯 **Visão Geral**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+O **PersonCraft** é uma aplicação web moderna e robusta para gerenciamento inteligente de cadastros pessoais. Desenvolvido com as mais avançadas tecnologias do mercado, oferece uma experiência excepcional tanto para usuários quanto para desenvolvedores.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### ✨ **Por que escolher PersonCraft?**
 
-Follow these steps:
+- 🎨 **Interface Moderna**: Design elegante e responsivo com Tailwind CSS + shadcn/ui
+- ⚡ **Performance Excepcional**: Construído com Vite e React 18 para máxima velocidade
+- 🔒 **Segurança Robusta**: Sistema de autenticação JWT completo
+- 📱 **Mobile-First**: Totalmente responsivo para todos os dispositivos
+- 🌍 **Deploy Automático**: Integração com Firebase Hosting para deploy instantâneo
+- 🛠️ **Arquitetura Escalável**: Código limpo e organizado seguindo as melhores práticas
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🏗️ **Arquitetura & Tecnologias**
 
-# Step 3: Install the necessary dependencies.
-npm i
+### **Frontend Moderno**
+```typescript
+React 18.3.1        // Interface reativa e performática
+TypeScript 5.5.3    // Tipagem estática para maior confiabilidade
+Vite 5.4.1          // Build tool ultrarrápido
+Tailwind CSS        // Estilização utilitária moderna
+shadcn/ui           // Componentes elegantes e acessíveis
+React Hook Form     // Gerenciamento de formulários otimizado
+React Router DOM    // Navegação SPA avançada
+Lucide React        // Ícones vetoriais modernos
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### **Backend Integration**
+```typescript
+RESTful API         // Comunicação padronizada
+JWT Authentication  // Segurança enterprise
+Axios HTTP Client   // Requisições otimizadas
+Environment Config  // Gestão multi-ambiente
+Error Handling      // Tratamento robusto de erros
+```
+
+### **DevOps & Deploy**
+```bash
+Firebase Hosting    // CDN global e SSL automático
+GitHub Integration  // Controle de versão
+NPM Scripts         // Automação de tarefas
+Batch Scripts       // Deploy simplificado Windows
+```
+
+---
+
+## 🚀 **Funcionalidades Principais**
+
+### 🔐 **Sistema de Autenticação Avançado**
+- **Login Seguro**: Autenticação JWT com tokens seguros
+- **Registro de Usuários**: Criação rápida e validada de contas
+- **Proteção de Rotas**: Acesso controlado às áreas privadas
+- **Logout Automático**: Gerenciamento inteligente de sessões
+
+### 👥 **Gestão Completa de Pessoas**
+- **CRUD Completo**: Criar, visualizar, editar e excluir registros
+- **Validação de CPF**: Algoritmo robusto de validação brasileira
+- **Interface Intuitiva**: Formulários otimizados e user-friendly
+- **Busca Avançada**: Localização rápida de registros
+
+### 🎨 **Experiência do Usuário Excepcional**
+- **Design Responsivo**: Adaptação perfeita a qualquer tela
+- **Navegação Fluida**: Transições suaves entre páginas
+- **Feedback Visual**: Indicadores de carregamento e status
+- **Acessibilidade**: Compatível com leitores de tela
+
+### 🛡️ **Segurança Enterprise**
+- **Autenticação JWT**: Tokens seguros e verificáveis
+- **Rotas Protegidas**: Acesso controlado por permissões
+- **Validação Dupla**: Frontend e backend sincronizados
+- **Sanitização de Dados**: Proteção contra ataques XSS
+
+---
+
+## 📊 **Diferenciais Competitivos**
+
+### ⚡ **Performance Otimizada**
+- **Lazy Loading**: Carregamento sob demanda
+- **Code Splitting**: Divisão inteligente do código
+- **Cache Inteligente**: Minimização de requisições
+- **Bundle Otimizado**: Tamanho reduzido para carregamento rápido
+
+### 🔧 **Arquitetura Escalável**
+```
+src/
+├── components/        # Componentes reutilizáveis
+│   ├── ui/           # Biblioteca de componentes
+│   └── layout/       # Estruturas de página
+├── pages/            # Páginas da aplicação
+├── services/         # Integração com APIs
+├── contexts/         # Gerenciamento de estado
+├── config/           # Configurações multi-ambiente
+├── types/            # Definições TypeScript
+└── utils/            # Funções utilitárias
+```
+
+### 🌐 **Multi-Ambiente**
+- **Desenvolvimento**: `https://localhost:7073/api`
+- **Produção**: `https://PersonManager.somee.com/api`
+- **Detecção Automática**: Configuração baseada no ambiente
+- **Variáveis de Ambiente**: Configuração flexível
+
+---
+
+## 🚀 **Quick Start**
+
+### **Pré-requisitos**
+- Node.js 22.17.1+ (via NVM)
+- npm 10.9.2+
+- Git
+
+### **Instalação Rápida**
+```bash
+# Clone o repositório
+git clone https://github.com/lucasduarte218/person-craft.git
+cd person-craft
+
+# Instale as dependências
+npm install
+
+# Execute em desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### **Deploy Instantâneo**
+```bash
+# Build para produção
+npm run build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Deploy no Firebase
+firebase deploy --only hosting
+```
 
-**Use GitHub Codespaces**
+### **Scripts Automatizados**
+```bash
+# Windows - Execução simplificada
+.\start.bat          # Inicia desenvolvimento
+.\deploy.bat         # Deploy automático
+.\login-firebase.bat # Login Firebase
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🎨 **Demonstração Visual**
 
-This project is built with:
+### **Tela de Login Moderna**
+- Design elegante com gradientes
+- Alternância entre Login/Registro
+- Validação em tempo real
+- Indicadores visuais de carregamento
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### **Dashboard Intuitivo**
+- Cards informativos
+- Navegação clara
+- Ações rápidas
+- Status em tempo real
 
-## How can I deploy this project?
+### **Formulários Inteligentes**
+- Validação automática de CPF
+- Feedback visual instantâneo
+- Auto-completar otimizado
+- Responsividade perfeita
 
-Simply open [Lovable](https://lovable.dev/projects/085cc7da-01fc-4908-96d1-d053de7ecb06) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+### 🛠️ **Manutenibilidade Superior**
+- **TypeScript** para redução de erros
+- **Componentes reutilizáveis** para agilidade
+- **Documentação completa** para onboarding
+- **Testes automatizados** para confiabilidade
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📱 **Responsividade Total**
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### **Mobile First**
+- Design otimizado para dispositivos móveis
+- Touch gestures intuitivos
+- Performance otimizada para 3G/4G
+- PWA ready para instalação
+
+### **Desktop Enhanced**
+- Aproveitamento total da tela
+- Atalhos de teclado
+- Multi-window support
+
+---
+
+## 🔗 **Links Úteis**
+
+- 🌐 **Aplicação Live**: [https://personmanager-f47d5.web.app](https://personmanager-f47d5.web.app)
+- 📚 **Documentação da API**: [./docs/API_CONFIG.md](./docs/API_CONFIG.md)
+- 🔧 **Backend API**: [https://PersonManager.somee.com/api](https://PersonManager.somee.com/api)
+- 📊 **Repository**: [https://github.com/lucasduarte218/person-craft](https://github.com/lucasduarte218/person-craft)
+
+---
+
+## 📄 **Licença**
+
+Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+---
+
+<div align="center">
+
+**PersonCraft**
+
+</div>

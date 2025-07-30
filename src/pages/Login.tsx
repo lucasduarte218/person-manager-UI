@@ -118,16 +118,6 @@ export default function Login() {
                   >
                     {isLoading ? 'Entrando...' : 'Entrar'}
                   </Button>
-                  
-                  <div className="text-center text-sm text-muted-foreground">
-                    <p>Ou acesse sem autenticação:</p>
-                    <Link 
-                      to="/public" 
-                      className="text-primary hover:text-primary-glow transition-colors font-medium"
-                    >
-                      Ver lista pública de pessoas
-                    </Link>
-                  </div>
                 </CardFooter>
               </form>
             </TabsContent>
